@@ -4,14 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StudioM Admin</title>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
 </head>
 <body>
- <script>
-  if (window.location.hash && window.location.hash.includes('invite_token')) {
-    window.location = '/admin/#' + window.location.hash.slice(1);
-  }
-  if (window.location.hash && window.location.hash.includes('recovery_token')) {
-    window.location = '/admin/#' + window.location.hash.slice(1);
-  }
-</script>
+</body>
 </html>
