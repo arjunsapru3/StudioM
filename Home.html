@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StudioM by Manya Mehrotra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f1117;
+  color:white;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+  radial-gradient(circle at top left,#8a2be2 0%,transparent 35%),
+  radial-gradient(circle at bottom right,#00d4ff 0%,transparent 35%);
+  opacity:.25;
+  z-index:-2;
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  opacity:.06;
+  z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,17,23,.55);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:1000;
+}
+
+.logo{
+  font-size:1.8rem;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:#00d4ff;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:28px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:#ddd;
+  font-size:.95rem;
+  transition:.4s;
+}
+
+nav ul li a:hover{
+  color:#00d4ff;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:130px 8% 70px;
+  gap:70px;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.tag{
+  color:#00d4ff;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+  font-size:.85rem;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:5rem;
+  line-height:1.05;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,#00d4ff,#9f6bff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#ccc;
+  line-height:1.9;
+  max-width:620px;
+  margin-bottom:38px;
+}
+
+.btn{
+  display:inline-block;
+  padding:16px 34px;
+  border-radius:50px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(135deg,#00d4ff,#8a2be2);
+  font-weight:600;
+  transition:.4s;
+  box-shadow:0 0 35px rgba(0,212,255,.3);
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 55px rgba(138,43,226,.5);
+}
+
+/* ROTATING ART */
+
+.art-showcase{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  perspective:1400px;
+}
+
+.carousel{
+  width:320px;
+  height:430px;
+  position:relative;
+  transform-style:preserve-3d;
+  animation:rotate 20s infinite linear;
+}
+
+.carousel:hover{
+  animation-play-state:paused;
+}
+
+.card{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 25px 70px rgba(0,0,0,.5);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s;
+}
+
+.card:hover img{
+  transform:scale(1.12);
+}
+
+.card:nth-child(1){transform:rotateY(0deg) translateZ(420px);}
+.card:nth-child(2){transform:rotateY(90deg) translateZ(420px);}
+.card:nth-child(3){transform:rotateY(180deg) translateZ(420px);}
+.card:nth-child(4){transform:rotateY(270deg) translateZ(420px);}
+
+/* COMMON */
+
+section{
+  padding:100px 8%;
+}
+
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;
+  margin-bottom:60px;
+}
+
+.section-title span{
+  color:#00d4ff;
+}
+
+/* COLLECTIONS */
+
+.collections{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:28px;
+}
+
+.collection-card{
+  padding:38px;
+  border-radius:28px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);
+  transition:.5s;
+}
+
+.collection-card:hover{
+  transform:translateY(-12px);
+  background:linear-gradient(135deg,rgba(0,212,255,.18),rgba(138,43,226,.18));
+}
+
+.collection-card h3{
+  font-size:1.5rem;
+  margin-bottom:15px;
+}
+
+.collection-card p{
+  color:#ccc;
+  line-height:1.8;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.gallery-item{
+  position:relative;
+  height:430px;
+  border-radius:28px;
+  overflow:hidden;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:1s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.12) rotate(2deg);
+  filter:brightness(.45);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transition:.6s;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(5px);
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+
+/* ROOM INSPIRATION */
+
+.rooms{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.room-card{
+  height:260px;
+  border-radius:30px;
+  padding:30px;
+  display:flex;
+  align-items:flex-end;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.room-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+}
+
+.room-card h3{
+  position:relative;
+  font-size:1.5rem;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+}
+
+.stat-box{
+  padding:40px;
+  border-radius:25px;
+  background:rgba(255,255,255,.05);
+}
+
+.stat-box h3{
+  font-size:3rem;
+  color:#00d4ff;
+}
+
+.stat-box p{
+  color:#ccc;
+}
+
+/* TIMELINE */
+
+.timeline{
+  max-width:850px;
+  margin:auto;
+}
+
+.timeline-item{
+  padding:30px;
+  margin-bottom:25px;
+  border-left:3px solid #00d4ff;
+  background:rgba(255,255,255,.05);
+  border-radius:0 25px 25px 0;
+}
+
+.timeline-item h3{
+  color:#00d4ff;
+  margin-bottom:10px;
+}
+
+.timeline-item p{
+  color:#ccc;
+}
+
+/* COMMISSION */
+
+.commission{
+  text-align:center;
+  border-radius:35px;
+  background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(138,43,226,.15));
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:50px;
+}
+
+.step{
+  padding:35px;
+  border-radius:25px;
+  background:rgba(255,255,255,.06);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.testimonial{
+  padding:35px;
+  border-radius:25px;
+  background:rgba(255,255,255,.06);
+  color:#ddd;
+  line-height:1.8;
+}
+
+/* QUERY SECTION */
+
+.query-section{
+  text-align:center;
+}
+
+.options{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.options label{
+  padding:16px 30px;
+  border-radius:50px;
+  cursor:pointer;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.4s;
+}
+
+.options label:hover{
+  transform:translateY(-5px);
+  background:linear-gradient(135deg,#00d4ff,#8a2be2);
+}
+
+input[type="radio"]{
+  display:none;
+}
+
+.response{
+  max-width:800px;
+  margin:auto;
+  padding:40px;
+  border-radius:30px;
+  background:rgba(255,255,255,.05);
+  min-height:150px;
+  backdrop-filter:blur(15px);
+}
+
+.answer{
+  display:none;
+  animation:fade .6s ease;
+  color:#ddd;
+  line-height:1.8;
+}
+
+.default{
+  display:block;
+}
+
+#q1:checked ~ .response .a1,
+#q2:checked ~ .response .a2,
+#q3:checked ~ .response .a3,
+#q4:checked ~ .response .a4{
+  display:block;
+}
+
+input:checked ~ .response .default{
+  display:none;
+}
+
+/* FAQ */
+
+.faq-box{
+  max-width:850px;
+  margin:auto;
+}
+
+details{
+  margin-bottom:18px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  cursor:pointer;
+}
+
+summary{
+  font-weight:600;
+}
+
+details p{
+  margin-top:15px;
+  color:#ccc;
+  line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:45px;
+  color:#999;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ANIMATION */
+
+@keyframes rotate{
+  from{transform:rotateY(0deg);}
+  to{transform:rotateY(360deg);}
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:3.4rem;
+  }
+
+  .carousel{
+    width:260px;
+    height:360px;
+  }
+
+  .card:nth-child(1){transform:rotateY(0deg) translateZ(300px);}
+  .card:nth-child(2){transform:rotateY(90deg) translateZ(300px);}
+  .card:nth-child(3){transform:rotateY(180deg) translateZ(300px);}
+  .card:nth-child(4){transform:rotateY(270deg) translateZ(300px);}
+}
+
+@media(max-width:700px){
+  nav ul{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:2.6rem;
+  }
+
+  .section-title{
+    font-size:2.4rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Studio<span>M</span></div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#commission">Commission</a></li>
+    <li><a href="#query">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="tag">StudioM by Manya Mehrotra</div>
+    <h1>Art Beyond <span>Walls</span></h1>
+    <p>
+      A luxury wall art studio creating abstract canvas pieces,
+      statement interiors, and custom artworks for homes,
+      offices, cafes, and premium spaces.
+    </p>
+    <a href="#query" class="btn">Contact Us</a>
+  </div>
+
+  <div class="art-showcase">
+    <div class="carousel">
+      <div class="card"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200&auto=format&fit=crop"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?q=80&w=1200&auto=format&fit=crop"></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1578301979108-0d9ff0ff5c0d?q=80&w=1200&auto=format&fit=crop"></div>
+    </div>
+  </div>
+</section>
+
+<section id="collections">
+  <h2 class="section-title">Signature <span>Collections</span></h2>
+
+  <div class="collections">
+    <div class="collection-card">
+      <h3>Cosmic Dreams</h3>
+      <p>Soft gradients, celestial tones, and dream-like abstract movement.</p>
+    </div>
+
+    <div class="collection-card">
+      <h3>Golden Textures</h3>
+      <p>Luxury metallic-inspired canvas artwork for premium interiors.</p>
+    </div>
+
+    <div class="collection-card">
+      <h3>Monochrome Luxury</h3>
+      <p>Elegant black, white, and grey statement pieces.</p>
+    </div>
+
+    <div class="collection-card">
+      <h3>Urban Abstract</h3>
+      <p>Bold contemporary artwork inspired by city life and modern design.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="section-title">Virtual <span>Gallery</span></h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop">
+      <div class="overlay">
+        <h3>Abstract Motion</h3>
+        <p>Luxury Canvas Collection</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop">
+      <div class="overlay">
+        <h3>Color Symphony</h3>
+        <p>Modern Artistic Design</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=1200&auto=format&fit=crop">
+      <div class="overlay">
+        <h3>Future Aesthetics</h3>
+        <p>Contemporary Wall Art</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Room <span>Inspirations</span></h2>
+
+  <div class="rooms">
+    <div class="room-card" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop');">
+      <h3>Living Room</h3>
+    </div>
+
+    <div class="room-card" style="background-image:url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200&auto=format&fit=crop');">
+      <h3>Bedroom</h3>
+    </div>
+
+    <div class="room-card" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop');">
+      <h3>Office</h3>
+    </div>
+
+    <div class="room-card" style="background-image:url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop');">
+      <h3>Cafe</h3>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Studio <span>Numbers</span></h2>
+
+  <div class="stats">
+    <div class="stat-box">
+      <h3>250+</h3>
+      <p>Artworks Created</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>100+</h3>
+      <p>Happy Clients</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>25+</h3>
+      <p>Cities Served</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>5+</h3>
+      <p>Exhibitions</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Artist <span>Journey</span></h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>2020 — First Canvas</h3>
+      <p>The beginning of an artistic journey with experimental textures and abstract expression.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2022 — Private Commissions</h3>
+      <p>Custom artwork projects began for personal spaces and interior designers.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2024 — Premium Collections</h3>
+      <p>StudioM evolved into a refined wall art identity for luxury spaces.</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>2026 — StudioM by Manya Mehrotra</h3>
+      <p>A dedicated studio for modern wall art, custom commissions, and curated collections.</p>
+    </div>
+  </div>
+</section>
+
+<section class="commission" id="commission">
+  <h2 class="section-title">Commission <span>Your Artwork</span></h2>
+
+  <p>
+    Create a personalized artwork that reflects your space, palette,
+    mood, and story.
+  </p>
+
+  <div class="steps">
+    <div class="step">Choose Size</div>
+    <div class="step">Select Colors</div>
+    <div class="step">Share Inspiration</div>
+    <div class="step">Receive Custom Artwork</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Collector <span>Testimonials</span></h2>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      “StudioM transformed our living room into a luxury art space.”
+    </div>
+
+    <div class="testimonial">
+      “The artwork became the main highlight of our office.”
+    </div>
+
+    <div class="testimonial">
+      “Elegant, modern, and completely customized to our interiors.”
+    </div>
+  </div>
+</section>
+
+<section class="query-section" id="query">
+  <h2 class="section-title">Ask About <span>Artworks</span></h2>
+
+  <input type="radio" name="query" id="q1">
+  <input type="radio" name="query" id="q2">
+  <input type="radio" name="query" id="q3">
+  <input type="radio" name="query" id="q4">
+
+  <div class="options">
+    <label for="q1">Custom Size</label>
+    <label for="q2">Artwork Pricing</label>
+    <label for="q3">Delivery Time</label>
+    <label for="q4">Canvas Material</label>
+  </div>
+
+  <div class="response">
+    <div class="default">
+      Select a question above to view response.
+    </div>
+
+    <div class="answer a1">
+      StudioM provides fully customizable artwork sizes for homes,
+      offices, cafes, hotels, and luxury interiors.
+    </div>
+
+    <div class="answer a2">
+      Pricing depends on artwork dimensions, material, finish,
+      framing, and customization requirements.
+    </div>
+
+    <div class="answer a3">
+      Average delivery time is 5–7 business days depending on
+      artwork size and custom detailing.
+    </div>
+
+    <div class="answer a4">
+      Premium cotton canvas and long-lasting archival inks are used
+      for a refined and durable finish.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+
+  <div class="faq-box">
+    <details>
+      <summary>Do you create custom artwork?</summary>
+      <p>Yes, StudioM creates customized artwork based on size, color palette, interior theme, and moodboard.</p>
+    </details>
+
+    <details>
+      <summary>Can artwork be made for offices and cafes?</summary>
+      <p>Yes, artwork can be designed specifically for commercial spaces, cafes, studios, hotels, and offices.</p>
+    </details>
+
+    <details>
+      <summary>Is framing available?</summary>
+      <p>Framing options can be selected depending on the artwork style and client requirement.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  © 2026 StudioM by Manya Mehrotra — Art Beyond Walls
+</footer>
+
+</body>
+</html>
