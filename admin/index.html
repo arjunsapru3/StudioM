@@ -6,6 +6,12 @@
   <title>StudioM Admin</title>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-</body>
+ <script>
+  if (window.location.hash && window.location.hash.includes('invite_token')) {
+    window.location = '/admin/#' + window.location.hash.slice(1);
+  }
+  if (window.location.hash && window.location.hash.includes('recovery_token')) {
+    window.location = '/admin/#' + window.location.hash.slice(1);
+  }
+</script>
 </html>
