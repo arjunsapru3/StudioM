@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudioM by Manya Mehrotra — original wall art and bespoke commissions.">
+  <title>StudioM by Manya Mehrotra</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a class="brand" href="#home">
+    <span>studio<em>M</em></span>
+    <small>BY MANYA MEHROTRA</small>
+  </a>
+
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#artist">About</a>
+    <a href="#works">Artworks</a>
+    <a href="#connect">Connect</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="cart-button" id="cartButton">Cart <b id="cartCount">0</b></button>
+    <a class="commission-button" href="#connect">Commission →</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <p class="eyebrow">01 / CONTEMPORARY WALL ART</p>
+
+    <h1>
+      Modern Wall Art
+      <br>
+      That <em>Speaks Emotion.</em>
+    </h1>
+
+    <p class="hero-lead">
+      Original artworks and bespoke commissions created to bring
+      character, colour and feeling into the spaces we live in.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#works" class="primary-button">Explore Collection →</a>
+      <a href="#connect" class="text-button">Commission a piece ↗</a>
+    </div>
+
+    <div class="hero-note">
+      <span></span>
+      Art for a more meaningful home
+    </div>
+  </div>
+
+  <div class="rolling-wall-wrap">
+    <div class="rolling-wall">
+      <div class="rolling-track">
+        <figure class="rolling-card card-1"><img src="assets/art-peacock.jpg" alt="Peacock artwork"></figure>
+        <figure class="rolling-card card-2"><img src="assets/art-quiet-forms.jpg" alt="Abstract wall artwork"></figure>
+        <figure class="rolling-card card-3"><img src="assets/art-buddha.jpg" alt="Meditative artwork"></figure>
+        <figure class="rolling-card card-4"><img src="assets/art-crimson-bird.jpg" alt="Crimson bird artwork"></figure>
+        <figure class="rolling-card card-5"><img src="assets/art-quiet-forms-2.jpg" alt="Geometric abstract artwork"></figure>
+      </div>
+    </div>
+
+    <div class="rolling-caption">
+      <div>
+        <small>FEATURED WALL</small>
+        <strong>A changing gallery of StudioM works</strong>
+      </div>
+      <span>01 / 05</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="artist-section" id="artist">
+  <div class="artist-copy">
+    <p class="eyebrow">02 / THE ARTIST</p>
+
+    <h2>Manya <em>Mehrotra.</em></h2>
+
+    <p class="artist-lead">
+      StudioM is a dialogue between emotion, form and space.
+    </p>
+
+    <p>
+      Manya creates contemporary wall art through colour, texture
+      and intuitive composition. Each piece is made to carry its own
+      visual identity while becoming part of the room around it.
+    </p>
+
+    <p>
+      The practice moves between bold figurative work, abstraction,
+      texture and colour-led pieces for homes, hospitality spaces
+      and private commissions.
+    </p>
+
+    <a href="#connect" class="text-button">Work with StudioM ↗</a>
+  </div>
+
+  <div class="artist-wall">
+    <img src="assets/room-bedroom-2.jpg" alt="StudioM artwork installed in a bedroom">
+    <div class="wall-note">
+      <small>ART IN SPACE</small>
+      <strong>Same walls. A deeper story.</strong>
+    </div>
+  </div>
+</section>
+
+
+<section class="works-section" id="works">
+
+  <header class="works-header">
+    <div>
+      <p class="eyebrow">03 / AVAILABLE WORKS</p>
+      <h2>Original Artworks <em>for Inspired Spaces.</em></h2>
+    </div>
+
+    <p>
+      A growing edit of original StudioM works currently available.
+      Click a piece to view it larger or add it directly to your cart.
+    </p>
+  </header>
+
+  <div class="works-grid">
+
+    <article class="product">
+      <button class="product-image open-art" data-image="assets/art-peacock.jpg" data-title="Peacock Majesty">
+        <img src="assets/art-peacock.jpg" alt="Peacock Majesty">
+      </button>
+      <div class="product-meta">
+        <small>SM / 001</small>
+        <h3>Peacock Majesty</h3>
+        <p>24 × 30 in · Acrylic on Canvas</p>
+        <div class="buy-row">
+          <strong>₹28,000</strong>
+          <button class="add-cart" data-id="1" data-name="Peacock Majesty" data-price="28000" data-size="24 × 30 in" data-image="assets/art-peacock.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product">
+      <button class="product-image open-art" data-image="assets/art-quiet-forms.jpg" data-title="Quiet Forms">
+        <img src="assets/art-quiet-forms.jpg" alt="Quiet Forms">
+      </button>
+      <div class="product-meta">
+        <small>SM / 002</small>
+        <h3>Quiet Forms</h3>
+        <p>36 × 18 in · Acrylic on Canvas</p>
+        <div class="buy-row">
+          <strong>₹26,000</strong>
+          <button class="add-cart" data-id="2" data-name="Quiet Forms" data-price="26000" data-size="36 × 18 in" data-image="assets/art-quiet-forms.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product">
+      <button class="product-image open-art" data-image="assets/art-buddha.jpg" data-title="Meditative Flame">
+        <img src="assets/art-buddha.jpg" alt="Meditative Flame">
+      </button>
+      <div class="product-meta">
+        <small>SM / 003</small>
+        <h3>Meditative Flame</h3>
+        <p>24 × 24 in · Acrylic on Canvas</p>
+        <div class="buy-row">
+          <strong>₹24,000</strong>
+          <button class="add-cart" data-id="3" data-name="Meditative Flame" data-price="24000" data-size="24 × 24 in" data-image="assets/art-buddha.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product">
+      <button class="product-image open-art" data-image="assets/art-crimson-bird.jpg" data-title="Crimson Bird">
+        <img src="assets/art-crimson-bird.jpg" alt="Crimson Bird">
+      </button>
+      <div class="product-meta">
+        <small>SM / 004</small>
+        <h3>Crimson Bird</h3>
+        <p>24 × 36 in · Acrylic on Canvas</p>
+        <div class="buy-row">
+          <strong>₹30,000</strong>
+          <button class="add-cart" data-id="4" data-name="Crimson Bird" data-price="30000" data-size="24 × 36 in" data-image="assets/art-crimson-bird.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product">
+      <button class="product-image open-art" data-image="assets/art-quiet-forms-2.jpg" data-title="Quiet Forms II">
+        <img src="assets/art-quiet-forms-2.jpg" alt="Quiet Forms II">
+      </button>
+      <div class="product-meta">
+        <small>SM / 005</small>
+        <h3>Quiet Forms II</h3>
+        <p>36 × 18 in · Acrylic on Canvas</p>
+        <div class="buy-row">
+          <strong>₹26,000</strong>
+          <button class="add-cart" data-id="5" data-name="Quiet Forms II" data-price="26000" data-size="36 × 18 in" data-image="assets/art-quiet-forms-2.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product placeholder-product">
+      <div class="product-image placeholder-art"><span>Artwork 06</span></div>
+      <div class="product-meta">
+        <small>SM / 006</small>
+        <h3>New Work</h3>
+        <p>Dimensions · Medium</p>
+        <div class="buy-row"><strong>₹—</strong><button disabled>Coming Soon</button></div>
+      </div>
+    </article>
+
+    <article class="product placeholder-product">
+      <div class="product-image placeholder-art"><span>Artwork 07</span></div>
+      <div class="product-meta">
+        <small>SM / 007</small>
+        <h3>New Work</h3>
+        <p>Dimensions · Medium</p>
+        <div class="buy-row"><strong>₹—</strong><button disabled>Coming Soon</button></div>
+      </div>
+    </article>
+
+    <article class="product placeholder-product">
+      <div class="product-image placeholder-art"><span>Artwork 08</span></div>
+      <div class="product-meta">
+        <small>SM / 008</small>
+        <h3>New Work</h3>
+        <p>Dimensions · Medium</p>
+        <div class="buy-row"><strong>₹—</strong><button disabled>Coming Soon</button></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="connect-section" id="connect">
+  <div class="connect-copy">
+    <p class="eyebrow">04 / LET'S STAY CONNECTED</p>
+    <h2>Enquiries, Commissions <em>& Collaborations.</em></h2>
+    <p>
+      For available works, custom commissions or collaborations,
+      connect directly with StudioM.
+    </p>
+  </div>
+
+  <div class="connect-links">
+    <a href="#"><span>Instagram</span><b>↗</b></a>
+    <a href="#"><span>WhatsApp</span><b>↗</b></a>
+    <a href="mailto:hello@example.com"><span>Email</span><b>↗</b></a>
+    <a href="mailto:hello@example.com?subject=StudioM Commission"><span>Commission</span><b>↗</b></a>
+  </div>
+</section>
+
+<footer>
+  <a class="brand footer-brand" href="#home">
+    <span>studio<em>M</em></span>
+    <small>BY MANYA MEHROTRA</small>
+  </a>
+
+  <p>Art for a more meaningful tomorrow.</p>
+  <span>© 2026 StudioM</span>
+</footer>
+
+</main>
+
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <header>
+    <div>
+      <small>STUDIOM</small>
+      <h2>Your Cart</h2>
+    </div>
+    <button id="closeCart">×</button>
+  </header>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <div id="emptyCart" class="empty-cart">
+    <p>Your cart is empty.</p>
+    <button id="continueShopping">Explore Works</button>
+  </div>
+
+  <div class="cart-footer">
+    <div>
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">₹0</strong>
+    </div>
+    <button id="checkoutButton">Proceed to Checkout →</button>
+  </div>
+</aside>
+
+
+<div class="art-modal" id="artModal">
+  <button id="closeArtModal">×</button>
+  <img id="artModalImage" src="" alt="">
+  <p id="artModalTitle"></p>
+</div>
+
+
+<div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-card">
+    <button id="closeCheckout">×</button>
+
+    <div class="checkout-heading">
+      <small>SECURE CHECKOUT</small>
+      <h2>Complete your order.</h2>
+    </div>
+
+    <div class="checkout-layout">
+      <form id="checkoutForm">
+        <div class="field-row">
+          <label>Full Name<input name="name" required></label>
+          <label>Phone<input name="phone" required></label>
+        </div>
+
+        <label>Email<input name="email" type="email" required></label>
+        <label>Address<textarea name="address" required></textarea></label>
+
+        <div class="field-row">
+          <label>City<input name="city" required></label>
+          <label>State<input name="state" required></label>
+        </div>
+
+        <label>PIN Code<input name="pin" required></label>
+
+        <button type="submit" class="pay-button">Continue to Payment →</button>
+      </form>
+
+      <div class="checkout-summary">
+        <small>ORDER SUMMARY</small>
+        <div id="checkoutItems"></div>
+
+        <div class="checkout-total">
+          <span>Total</span>
+          <strong id="checkoutTotal">₹0</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="toast" class="toast">Added to cart</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
